@@ -5,7 +5,7 @@
 //Access code
 const String CODE = "1234";
 //Emergency key
-const String EMERGENCYKEY = "***";
+const String EMERGENCY_KEY = "***";
 //Normal distance to closed room door in cm
 const int NORM_DIST = 15;
 //Error bound for a closed door in cm
@@ -130,7 +130,7 @@ void incorrect() {
 }
 
 //Checks the four digit pin, returns true if the input matches the CODE
-//or if the EMERGENCYKEY is entered. # key resets the input values.
+//or if the EMERGENCY_KEY is entered. # key resets the input values.
 boolean checkPin() {
   String input = "";   // Clear input values
   
@@ -142,7 +142,7 @@ boolean checkPin() {
     char digit = customKeypad.getKey();
     long timer = currTime - startTime;
     
-    if (input.equals(EMERGENCYKEY)) {
+    if (input.equals(EMERGENCY_KEY)) {
       servoPos = 180;
       return true;
     } else if (digit == '#') {
